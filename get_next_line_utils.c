@@ -25,7 +25,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *str1, char const *str2)
+char	*ft_strjoin(char *str1, char *str2)
 {
 	int	size;
 	char	*str;
@@ -34,7 +34,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
 
 	i = 0;
 	j = 0;
-	size = ft_strlen(str1) + st_strlen(str2);
+	size = ft_strlen(str1) + ft_strlen(str2);
 	str = malloc(sizeof(char) * (size + 1));
 	if (!str || !str1 || str2)
 		return (NULL);
