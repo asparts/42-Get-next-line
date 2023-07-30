@@ -6,7 +6,7 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:00:37 by mnummi            #+#    #+#             */
-/*   Updated: 2023/07/30 16:15:08 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/07/30 16:47:19 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@
 
 char			*get_next_line(int fd);
 char			*read_file(int fd, char *res);
-char			*ft_free(char *buffer, char *buffer2);
+char			*ft_join_and_free(char *buffer, char *buffer2);
 char			*ft_next_line(char *buffer);
 char			*ft_read_line(char *buffer);
+void			*ft_strchr(const char *s, int searchedChar);
 
 size_t			ft_strlen(char *str);
-char			*ft_strjoin(char *str1, char *str2);
 void			*ft_calloc(size_t elementCount, size_t elementSize);
-void			ft_bzero(void *s, size_t n);
 
 #endif

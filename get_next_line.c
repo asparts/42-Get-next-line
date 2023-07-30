@@ -6,7 +6,7 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:45:15 by mnummi            #+#    #+#             */
-/*   Updated: 2023/07/30 16:33:14 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/07/30 17:13:46 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -36,7 +36,7 @@ char	*read_file(int fd, char *res)
 			return (NULL);
 		}
 		buffer[byte_read] = 0;
-		res = ft_join_and_free(res, buffer, 1);
+		res = ft_join_and_free(res, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
