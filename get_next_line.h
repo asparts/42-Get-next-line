@@ -22,8 +22,8 @@
 char			*get_next_line(int fd);
 char			*read_file(int fd, char *res);
 char			*ft_free(char *buffer, char *buffer2);
-extern char		*ft_next_line(char *buffer);
-extern char		*ft_read_line(char *buffer);
+char	    	*ft_next_line(char *buffer);
+char	    	*ft_read_line(char *buffer);
 
 size_t			ft_strlen(char *str);
 char			*ft_strjoin(char *str1, char *str2);
