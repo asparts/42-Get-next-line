@@ -6,7 +6,7 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:00:45 by mnummi            #+#    #+#             */
-/*   Updated: 2023/07/27 16:37:56 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/07/30 15:43:18 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,24 +55,18 @@ char	*ft_strjoin(char *str1, char *str2)
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
 	char	*p;
-
-	p = malloc(elementSize * elementCount);
-	if(!p)
-		return (NULL);
-	return (p);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	char	*c = s;
 	size_t	i;
 
 	i = 0;
-	while (i <= n)
+	p = malloc(elementSize * elementCount);
+	if(!p)
+		return (NULL);
+	while ( i <= elementSize)
 	{
-		c[i] = '\0';
+		p[i] = '\0';
 		i++;
 	}
+	return (p);
 }
 
 void	*ft_strchr(const char *s, int searchedChar)
