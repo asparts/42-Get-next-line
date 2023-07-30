@@ -6,10 +6,9 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:00:45 by mnummi            #+#    #+#             */
-/*   Updated: 2023/07/30 15:49:44 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/07/30 16:14:00 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "get_next_line.h"
 
@@ -18,7 +17,7 @@ size_t	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		i++;
 	}
@@ -27,10 +26,10 @@ size_t	ft_strlen(char *str)
 
 char	*ft_strjoin(char *str1, char *str2)
 {
-	int	size;
+	int		size;
 	char	*str;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -52,6 +51,7 @@ char	*ft_strjoin(char *str1, char *str2)
 	str[size] = 0;
 	return (str);
 }
+
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
 	char	*p;
@@ -59,9 +59,9 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 
 	i = 0;
 	p = malloc(elementSize * elementCount);
-	if(!p)
+	if (!p)
 		return (NULL);
-	while ( i <= elementSize)
+	while (i <= elementSize)
 	{
 		p[i] = '\0';
 		i++;
@@ -84,10 +84,10 @@ void	*ft_strchr(const char *s, int searchedChar)
 
 char	*ft_join_and_free(char *buffer, char *buffer2, int free)
 {
-	int	size;
+	int		size;
 	char	*str;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
