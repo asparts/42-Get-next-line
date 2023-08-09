@@ -47,6 +47,7 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
    character searchedChar in the string s.
    Returns NULL if character is not found.
 */
+
 void	*ft_strchr(const char *s, int searchedChar)
 {
 	char	*str;
