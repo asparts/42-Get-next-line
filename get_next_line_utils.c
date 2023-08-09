@@ -12,7 +12,9 @@
 
 
 #include "get_next_line.h"
-
+/**
+ * Function to get string length.
+*/
 size_t	ft_strlen(char *str)
 {
 	int	i;
@@ -24,7 +26,11 @@ size_t	ft_strlen(char *str)
 	}
 	return (i);
 }
-
+/**
+ * Function to join 2 strings together.
+ * Returns NULL if malloc fails, or given strings are null
+ * otherwise returns joined string with null-terminator at the end
+*/
 char	*ft_strjoin(char *str1, char *str2)
 {
 	int	size;
@@ -52,6 +58,9 @@ char	*ft_strjoin(char *str1, char *str2)
 	str[size] = 0;
 	return (str);
 }
+/**
+ * Allocating memory, ft_bzero makes sure that the memory is set to zero.
+*/
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
 	char	*p;
@@ -59,6 +68,7 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 	p = malloc(elementSize * elementCount);
 	if(!p)
 		return (NULL);
+	ft_bzero(p, elementSize * elementCount);
 	return (p);
 }
 
@@ -74,7 +84,11 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/**
+ * strchr returns returns a pointer to the first occurrence of the
+   character searchedChar in the string s.
+   Returns NULL if character is not found.
+*/
 void	*ft_strchr(const char *s, int searchedChar)
 {
 	char	*str;
@@ -87,6 +101,9 @@ void	*ft_strchr(const char *s, int searchedChar)
 	else
 		return (NULL);
 }
+/**
+ * This is going to be hard to explain.
+*/
 char	*read_file(int fd, char *res)
 {
 	char	*buffer;
@@ -115,6 +132,9 @@ char	*read_file(int fd, char *res)
 	free(buffer);
 	return (res);
 }
+/**
+ * Function to delete the found line
+*/
 char	*ft_next_line(char *buffer)
 {
 	int	i;
@@ -141,7 +161,9 @@ char	*ft_next_line(char *buffer)
 	free(buffer);
 	return (line);
 }
-// return line
+/**
+ * Get the line that we're supposed to return
+*/
 char	*ft_read_line(char *buffer)
 {
 	char	*line;
@@ -168,6 +190,9 @@ char	*ft_read_line(char *buffer)
 		line[i++] = '\n';
 	return (line);
 }
+/**
+ * Function to free the buffer. Before freeing, joins the buffer 1 and 2 and returns the joined string.
+*/
 char	*ft_free(char *buffer, char *buffer2)
 {
 	char	*temp;
