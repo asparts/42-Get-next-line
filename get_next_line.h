@@ -6,7 +6,7 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:00:37 by mnummi            #+#    #+#             */
-/*   Updated: 2023/10/10 00:17:49 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/10/10 00:57:58 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@
 char			*get_next_line(int fd);
 int				check_for_new_line(char *str);
 void			*ft_calloc(size_t elementCount, size_t elementSize);
-size_t			ft_strlen(char *str);
+size_t			ft_get_line_len(char *str);
 void			read_line(int fd, char **ret_str, char **buf, int read_bytes);
 char			*get_next_lines_after_return_str(char *return_str);
 char			*ft_strjoin(char const *str1, char const *str2);
 char			*new_line_in_buffer(char **return_str, char **buffer);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+void			*ft_memset(void *s, int c, size_t n);
 
 #endif

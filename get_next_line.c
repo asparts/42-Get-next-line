@@ -6,7 +6,7 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:45:15 by mnummi            #+#    #+#             */
-/*   Updated: 2023/10/10 00:14:34 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/10/10 00:57:12 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -115,4 +115,34 @@ char	*get_next_line(int fd)
 	}
 	read_line(fd, &return_str, &buffer, read_bytes);
 	return (return_str);
+}
+
+char	*new_line_in_buffer(char **return_str, char **buffer)
+{
+	char	*tmp_str;
+
+	tmp_str = ft_strjoin(*return_str, "\0");
+	*buffer = get_next_lines_after_return_str(*return_str);
+	free(*return_str);
+	*return_str = tmp_str;
+	return (tmp_str);
+}
+
+/**
+ * return 1 if new line exist, 0 if it doesnt
+*/
+int	check_for_new_line(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
 }

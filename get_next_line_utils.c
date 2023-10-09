@@ -6,30 +6,11 @@
 /*   By: mnummi <mnummi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 12:00:45 by mnummi            #+#    #+#             */
-/*   Updated: 2023/10/10 00:12:12 by mnummi           ###   ########.fr       */
+/*   Updated: 2023/10/10 00:56:19 by mnummi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-/**
- * return 1 if new line exist, 0 if it doesnt
-*/
-int	check_for_new_line(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str == NULL)
-		return (0);
-	while (str[i] != '\0')
-	{
-		if (str[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
@@ -46,17 +27,6 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 		i++;
 	}
 	return (p);
-}
-
-char	*new_line_in_buffer(char **return_str, char **buffer)
-{
-	char	*tmp_str;
-
-	tmp_str = ft_strjoin(*return_str, "\0");
-	*buffer = get_next_lines_after_return_str(*return_str);
-	free(*return_str);
-	*return_str = tmp_str;
-	return (tmp_str);
 }
 
 /**
@@ -88,7 +58,7 @@ char	*ft_strjoin(char const *str1, char const *str2)
 /**
  * Function to get line length.
 */
-size_t	ft_strlen(char *str)
+size_t	ft_get_line_len(char *str)
 {
 	int	i;
 
@@ -100,4 +70,34 @@ size_t	ft_strlen(char *str)
 		i++;
 	}
 	return (i);
+}
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	if (!dest && !src)
+		return (NULL);
+	while (i < n)
+	{
+		*(char *)(dest + i) = *(char *)(src + i);
+		i++;
+	}
+	return (dest);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*cc;
+	size_t			i;
+
+	cc = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		cc[i] = c;
+		i++;
+	}
+	return (s = cc);
 }
