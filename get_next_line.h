@@ -16,17 +16,16 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE 
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 8
 # endif
 
 char			*get_next_line(int fd);
-char			*read_file(int fd, char *res);
-char			*ft_join_and_free(char *buffer, char *buffer2);
-char			*ft_next_line(char *buffer);
-char			*ft_read_line(char *buffer);
-void			*ft_strchr(const char *s, int searchedChar);
-
-size_t			ft_strlen(char *str);
+int             check_for_new_line(char *str);
 void			*ft_calloc(size_t elementCount, size_t elementSize);
+size_t			ft_strlen(char *str);
+void            read_line(int fd, char **return_str, char **buffer, int read_bytes);
+char	        *get_next_lines_after_return_str(char *return_str);
+char            *ft_strjoin(char const *str1, char const *str2);
+char	        *new_line_in_buffer(char **return_str, char **buffer);
 
 #endif
