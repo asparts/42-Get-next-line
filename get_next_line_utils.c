@@ -21,12 +21,12 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 	p = (char *)malloc(elementSize * elementCount + 1);
 	if (!p)
 		return (NULL);
-	while (i <= elementSize)
+	while (i < elementSize * elementCount)
 	{
-		p[i] = '\0';
+		p[i] = 0;
 		i++;
 	}
-	return (p);
+	return ((void*)p);
 }
 
 /**
