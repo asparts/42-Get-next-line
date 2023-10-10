@@ -26,7 +26,7 @@ void	*ft_calloc(size_t elementCount, size_t elementSize)
 		p[i] = 0;
 		i++;
 	}
-	return ((void*)p);
+	return ((void *)p);
 }
 
 /**
